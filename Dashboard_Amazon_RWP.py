@@ -6,7 +6,7 @@ import pandas as pd
 import plotly.express as px  # Plotly for interactive charts
 
 # ====================== DATA LOADING ======================
-FILE_PATH = r"C:\Users\Jeedu\OneDrive\Desktop\Analytics and Visualisation Data set\BD_prepared_visualization_data.xlsx"  # Path to the Excel file
+FILE_PATH = "https://raw.githubusercontent.com/Balajee-Dutta/Analytics-and-Viz-BEMM461-/main/BD_prepared_visualization_data.xlsx"  # Path to the Excel file
 
 employee_productivity = pd.read_excel(FILE_PATH, sheet_name='Employee_Productivity')  # Reads data from the "Employee_Productivity" sheet
 productivity_satisfaction = pd.read_excel(FILE_PATH, sheet_name='Productivity_Satisfaction')  # Reads data from the "Productivity_Satisfaction" sheet
