@@ -155,7 +155,7 @@ style={'backgroundColor': '#0d1117'}
     ],
     [
         Input('dept-filter', 'value'),
-        Input('year-filter', 'value')  # <-- NEW YEAR FILTER INPUT
+        Input('year-filter', 'value')  
     ]
 )
 def update_dashboard(selected_depts, selected_years):
@@ -198,8 +198,8 @@ def update_dashboard(selected_depts, selected_years):
         paper_bgcolor='#0d1117',
         plot_bgcolor='#0d1117',
         font_color='white',
-        xaxis=dict(showgrid=False, title='Magnitude'),  # X-axis settings
-        yaxis=dict(showgrid=False, title='Time in Hrs')  # Y-axis settings
+        xaxis=dict(showgrid=True, title='Magnitude'),  # X-axis settings
+        yaxis=dict(showgrid=True, title='Time in Hrs')  # Y-axis settings
     )
 
     # Communication Metrics (Bar Chart)
@@ -258,8 +258,8 @@ def update_dashboard(selected_depts, selected_years):
         paper_bgcolor='#0d1117',
         plot_bgcolor='#0d1117',
         font_color='white',
-        xaxis=dict(showgrid=False, title='Magnitude'),  # X-axis settings
-        yaxis=dict(showgrid=False, title='Time in Hrs')  # Y-axis settings
+        xaxis=dict(showgrid=True, title='Magnitude'),  # X-axis settings
+        yaxis=dict(showgrid=True, title='Time in Hrs')  # Y-axis settings
     )
 
     # Engagement and Well-being (Scatter Plot)
@@ -277,8 +277,8 @@ def update_dashboard(selected_depts, selected_years):
         paper_bgcolor='#0d1117',
         plot_bgcolor='#0d1117',
         font_color='white',
-        xaxis=dict(showgrid=False, title='Satisfaction Score'),  # X-axis settings
-        yaxis=dict(showgrid=False, title='Burnout Indicator')  # Y-axis settings
+        xaxis=dict(showgrid=True, title='Satisfaction Score'),  # X-axis settings
+        yaxis=dict(showgrid=True, title='Burnout Indicator')  # Y-axis settings
     )
 
     # Return all figures and metrics
