@@ -1,28 +1,28 @@
 # ====================== IMPORTING LIBRARIES ======================
 import dash  # Core Dash library for building web applications
-from dash import dcc, html, Input, Output  # Dash components and callback decorators
-import dash_bootstrap_components as dbc  # Bootstrap components for styling and layout
+from dash import dcc, html, Input, Output  #Dash components and callback decorators
+import dash_bootstrap_components as dbc  #Bootstrap components for styling and layout
 import pandas as pd  
-import plotly.express as px  # Plotly for interactive charts
+import plotly.express as px  #Plotly for interactive charts
 
 # ====================== DATA LOADING ======================
 FILE_PATH = "https://raw.githubusercontent.com/Balajee-Dutta/Analytics-and-Viz-BEMM461-/main/BD_prepared_visualization_data.xlsx"  # Path to the Excel file
 
-employee_productivity = pd.read_excel(FILE_PATH, sheet_name='Employee_Productivity')  # Reads data from the "Employee_Productivity" sheet
-productivity_satisfaction = pd.read_excel(FILE_PATH, sheet_name='Productivity_Satisfaction')  # Reads data from the "Productivity_Satisfaction" sheet
+employee_productivity = pd.read_excel(FILE_PATH, sheet_name='Employee_Productivity')  #Reads data from the "Employee_Productivity" sheet
+productivity_satisfaction = pd.read_excel(FILE_PATH, sheet_name='Productivity_Satisfaction')  #Reads data from the "Productivity_Satisfaction" sheet
 
-DEPARTMENTS = sorted(productivity_satisfaction['Department'].dropna().unique())  # Gets sorted unique departments
+DEPARTMENTS = sorted(productivity_satisfaction['Department'].dropna().unique())  #Gets sorted unique departments
 
 # ====================== ADDING YEAR FILTER ======================
 
-YEARS = sorted(employee_productivity['Year'].dropna().unique())  # Gets sorted unique years
+YEARS = sorted(employee_productivity['Year'].dropna().unique())  #Gets sorted unique years
 # ========================================================================
 
-COLOR_PALETTE = px.colors.qualitative.Plotly  # Plotly's color palette
-DEPARTMENT_COLORS = {dept: COLOR_PALETTE[i % len(COLOR_PALETTE)] for i, dept in enumerate(DEPARTMENTS)}  # Assigns colors to departments
+COLOR_PALETTE = px.colors.qualitative.Plotly  #Plotly's color palette
+DEPARTMENT_COLORS = {dept: COLOR_PALETTE[i % len(COLOR_PALETTE)] for i, dept in enumerate(DEPARTMENTS)}  #Assigns colors to departments
 
 # ====================== APP INITIALIZATION ======================
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])  # Initializes the Dash app with Bootstrap theme
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])  #Initializes the Dash app with Bootstrap theme
 
 # ====================== REUSABLE COMPONENT FUNCTIONS ======================
 
