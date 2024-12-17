@@ -67,7 +67,7 @@ app.layout = dbc.Container([
             }
         )
     ]),
-    
+
     # ====================== YEAR AND DEPARTMENT FILTERS ======================
     # Department & Year Filter Row
     dbc.Row([
@@ -118,19 +118,19 @@ app.layout = dbc.Container([
         'padding': '20px',
         'border-radius': '5px'
     }),
-    
+
     # Graphs Section: Row 1
     dbc.Row([
         dbc.Col(create_graph('work_hours_chart'), width=6),
         dbc.Col(create_graph('communication_chart'), width=6)
     ]),
-    
+
     # Graphs Section: Row 2
     dbc.Row([
         dbc.Col(create_graph('environmental_chart'), width=6),
         dbc.Col(create_graph('work_tools_chart'), width=6)
     ]),
-    
+
     # Graphs Section: Row 3
     dbc.Row([
         dbc.Col(create_graph('engagement_chart'), width=12)
@@ -155,27 +155,27 @@ style={'backgroundColor': '#0d1117'}
     ],
     [
         Input('dept-filter', 'value'),
-        Input('year-filter', 'value')  
+        Input('year-filter', 'value')
     ]
 )
 def update_dashboard(selected_depts, selected_years):
     # Updates dashboard based on selected departments and selected years
-    
+
     # ====================== NEW CODE: FILTERING DATA BY YEAR & DEPARTMENT ======================
     filtered_employee_df = employee_productivity.copy()
     filtered_satisfaction_df = productivity_satisfaction.copy()
-    
+
     # Filter by Department if departments are selected
     if selected_depts:
         filtered_employee_df = filtered_employee_df[filtered_employee_df['Department'].isin(selected_depts)]
         filtered_satisfaction_df = filtered_satisfaction_df[filtered_satisfaction_df['Department'].isin(selected_depts)]
-    
+
     # Filter by Year if years are selected
     if selected_years:
         filtered_employee_df = filtered_employee_df[filtered_employee_df['Year'].isin(selected_years)]
         filtered_satisfaction_df = filtered_satisfaction_df[filtered_satisfaction_df['Year'].isin(selected_years)]
     # ===========================================================================================
-    
+
     # Calculate metrics
     total_employees = len(filtered_employee_df)  # Total number of employees
     avg_satisfaction_score = round(filtered_employee_df['Satisfaction_Score'].mean(), 2) if not filtered_employee_df.empty else 0
@@ -217,7 +217,7 @@ def update_dashboard(selected_depts, selected_years):
         plot_bgcolor='#0d1117',
         font_color='white',
         xaxis=dict(showgrid=False, title='Department'),  # X-axis settings
-        yaxis=dict(showgrid=False, title='Email Response Rate')  # Y-axis settings
+        yaxis=dict(showgrid=False, title='Count of Emails')  # Y-axis settings (Updated)
     )
 
     # Environmental Context (Heatmap)
