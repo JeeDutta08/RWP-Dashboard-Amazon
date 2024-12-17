@@ -217,7 +217,7 @@ def update_dashboard(selected_depts, selected_years):
         plot_bgcolor='#0d1117',
         font_color='white',
         xaxis=dict(showgrid=False, title='Department'),  # X-axis settings
-        yaxis=dict(showgrid=False, title='Count of Emails')  # Y-axis settings (Updated)
+        yaxis=dict(showgrid=False, title='Count of Emails')  # Y-axis settings 
     )
 
     # Environmental Context (Heatmap)
