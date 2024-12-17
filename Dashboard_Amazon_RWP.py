@@ -13,8 +13,8 @@ productivity_satisfaction = pd.read_excel(FILE_PATH, sheet_name='Productivity_Sa
 
 DEPARTMENTS = sorted(productivity_satisfaction['Department'].dropna().unique())  # Gets sorted unique departments
 
-# ====================== NEW CODE: ADDING YEAR FILTER ======================
-# Assuming both dataframes have a 'Year' column. If only one has it, adjust accordingly.
+# ====================== ADDING YEAR FILTER ======================
+
 YEARS = sorted(employee_productivity['Year'].dropna().unique())  # Gets sorted unique years
 # ========================================================================
 
