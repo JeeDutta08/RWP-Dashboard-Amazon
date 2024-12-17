@@ -161,7 +161,7 @@ style={'backgroundColor': '#0d1117'}
 def update_dashboard(selected_depts, selected_years):
     # Updates dashboard based on selected departments and selected years
 
-    # ====================== NEW CODE: FILTERING DATA BY YEAR & DEPARTMENT ======================
+    # ====================== FILTERING DATA BY YEAR & DEPARTMENT ======================
     filtered_employee_df = employee_productivity.copy()
     filtered_satisfaction_df = productivity_satisfaction.copy()
 
