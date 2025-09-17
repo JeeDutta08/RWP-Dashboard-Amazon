@@ -127,15 +127,10 @@ FILE_PATH = "BD_prepared_visualization_data.xlsx"
 
 ---
 
-## 📸 Screenshots
-*(Add 1–3 screenshots or a short GIF of the dashboard.)*
-
----
-
 ## 🤝 Contributing
 PRs welcome! For major changes, open an issue to discuss the proposal.
 
 ---
 
 ## 📜 License
-MIT (or your preferred license). Add a `LICENSE` file and reference it here.
+MIT  license 
